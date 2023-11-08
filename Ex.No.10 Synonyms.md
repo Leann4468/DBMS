@@ -1,135 +1,46 @@
-# EXP NO 10: SYNONYMS AND ASSERTIONS IN SQL 
-### DATE: 
+# EX.NO.12: Simulating Classification using WEKA Data mining and Analysis Tool
+## Date: 
 ## AIM:
-To create a student database and create a synonym and assertions.
-
-## THEORY
-## SYNONYM
+To perform a classification technique using WEKA tool
+## WEKA:
 <div align="justify">
-A SYNONYM provides another name for database object, referred to as original object, that may exist on a local or another server.
-</div>
-## ASSERTIONS
+Weka is a comprehensive software that lets you to preprocess the big data, apply different machine learning algorithms on big data and compare various outputs. This software makes it easy to work with big data and train a machine using machine learning algorithms. This tutorial will guide you in the use of WEKA for achieving all the above requirements.
+WEKA - an open source software provides tools for data preprocessing, implementation of several Data mining and Machine Learning algorithms, and visualization tools so that you can develop machine learning techniques and apply them to real-world data mining problems. What WEKA offers is summarized in the following diagram −
+
+  ![image](https://github.com/dineshgl/EX-9-Simulating-Classification-using-WEKA-Tool/assets/143793356/c3702dff-f72d-4ba1-9cca-eb444358ab21)
+
+## CLASSIFICATION:
 <div align="justify">
-* An assertion is a piece of SQL which makes sure a condition is satisfied, else or it stops the action being taken on a database.
-* An assertion is a constraint that might be dependent upon multiple rows of multiple tables.
-</div>
+Classification in data mining is a common technique that separates data points into different classes. It allows you to organize data sets of all sorts, including complex and large datasets as well as small and simple ones. It primarily involves using algorithms that you can easily modify to improve the data quality. This is a big reason why supervised learning is particularly common with classification in techniques in data mining. The Classification algorithm is a Supervised Learning technique that is used to identify the category of new observations on the basis of training data. In Classification, a program learns from the given dataset or observations and then classifies new observation into a number of classes or groups. Such as, Yes or No, 0 or 1, Spam or Not Spam, cat or dog, etc. Classes can be called as targets/labels or categories.<br>
+  
+## PROCEDURE
+1. Load the data file into the WEKA explorer. The data can be loaded from the following sources −
+   Local file system
+   Web
+   Database
+2. Click on the "Open file" button. A directory navigator window opens as shown in the following screen − <br>
+   ![image](https://github.com/dineshgl/EX-9-Simulating-Classification-using-WEKA-Tool/assets/143793356/7088c22f-650c-4869-93d0-b070c844c592)
+3. Click on the Classify tab, and you would see the following screen <br>
+   ![image](https://github.com/dineshgl/EX-9-Simulating-Classification-using-WEKA-Tool/assets/143793356/d2863bed-3770-4b5b-84c6-c95a7f6f8702)
+4. Now, keep the default play option for the output class −<br>
+   ![image](https://github.com/dineshgl/EX-9-Simulating-Classification-using-WEKA-Tool/assets/143793356/45296fdf-5c28-4326-91c5-db77a31c7273)
+5. Click on the Choose button and select the following classifier − weka→classifiers>trees>J48. <br>
+   ![image](https://github.com/dineshgl/EX-9-Simulating-Classification-using-WEKA-Tool/assets/143793356/bdbf5e47-9233-4fdc-a0b6-b22bf4c7aadc)
+6. Click on the Start button to start the classification process. After a while, the classification results would be presented on your screen as shown here −<br>
+   ![image](https://github.com/dineshgl/EX-9-Simulating-Classification-using-WEKA-Tool/assets/143793356/7341a7e0-cb7c-4fd9-abd7-36cf9d484ae6)
+7. To see the visual representation of the results, right click on the result in the Result list box. Several options would pop up on the screen as shown here −<br>
+   ![image](https://github.com/dineshgl/EX-9-Simulating-Classification-using-WEKA-Tool/assets/143793356/a846aee3-1e84-4101-932e-83029762593b)
+8. Select Visualize tree to get a visual representation of the traversal tree as seen in the screenshot below −<br>
+   ![image](https://github.com/dineshgl/EX-9-Simulating-Classification-using-WEKA-Tool/assets/143793356/a2aab1c7-a756-4de7-a1e5-1d6a5fa53321)
+9. Selecting Visualize classifier errors would plot the results of classification as shown here −<br>
+    ![image](https://github.com/dineshgl/EX-9-Simulating-Classification-using-WEKA-Tool/assets/143793356/9d39bad9-a77c-4c72-a9bb-0031154ef0c4)
+10. A cross represents a correctly classified instance while squares represents incorrectly classified instances. At the lower left corner of the plot you see a cross that indicates if outlook is sunny then play the game. So this is a correctly classified instance.<br>
+## OUTPUT:
+![image](https://github.com/TejaswiniGugananthan/DBMS/assets/121222763/391098ff-abae-45ed-aa9a-2cc4ab480b6b)
+![image](https://github.com/TejaswiniGugananthan/DBMS/assets/121222763/0ecb59e7-b81f-4389-9bde-8a6e1f492ba5)
+![image](https://github.com/TejaswiniGugananthan/DBMS/assets/121222763/9ee0c88e-cd39-4fb2-812c-34e79b328cea)
+![image](https://github.com/TejaswiniGugananthan/DBMS/assets/121222763/b5d1bcd2-3008-48c4-b28f-4cf411f3ff58)
+![image](https://github.com/TejaswiniGugananthan/DBMS/assets/121222763/595eb72c-08ed-47a8-8b6a-ffd52caf3c4c)
 
-## Query:
-### 1) Create a table EMPLOYEE and perform insertion of two rows.
-
-### SQL QUERY: 
-```
-CREATE TABLE EMPLOYEE (
-    employee_id INT ,
-    name VARCHAR(255),
-    department VARCHAR(255),
-    salary DECIMAL(10, 2)
-);
-```
-
-
-### OUTPUT:
-![Screenshot 2023-10-21 190258](https://github.com/Lakshmipriya2005/DBMS/assets/115525361/71b5a740-3ed6-400c-a81e-55b48f5a29f8)
-![Screenshot 2023-10-21 190547](https://github.com/Lakshmipriya2005/DBMS/assets/115525361/f4d76026-48c5-4d61-a806-4befa6e93d93)
-
-
-
-
-
-### 2) Create a synonym S1 for EMPLOYEE  table.
-
-### SQL QUERY: 
-```
-CREATE SYNONYM S1 FOR EMPLOYEE;
-```
-
-### OUTPUT:
-![Screenshot 2023-10-21 190453](https://github.com/Lakshmipriya2005/DBMS/assets/115525361/b455ceaa-8657-442e-b801-a7c7b7e87b67)
-
-
-
-
-### 3) Display the EMPLOYEE  table using synonym S1.
- 
-### SQL QUERY: 
-```
-SELECT * FROM S1;
-```
-
-
-### OUTPUT:
-
-![Screenshot 2023-10-21 190740](https://github.com/Lakshmipriya2005/DBMS/assets/115525361/6919a5b8-9f79-4180-a956-3df97ee88b03)
-
-
-
-
-### 4) Drop the synonym.
-
-### SQL QUERY: 
-```
-DROP SYNONYM S1;
-```
-
-
-### OUTPUT:
-
-![Screenshot 2023-10-21 190827](https://github.com/Lakshmipriya2005/DBMS/assets/115525361/6368462e-e8b5-4451-8364-19a41290c302)
-
-
-### 5) Create a supplier table and create a sequence S2 for supplier table id.
-
-### SQL QUERY: 
-```
-CREATE TABLE supplier (
-    id INT,
-    name VARCHAR(255),
-    address VARCHAR(255),
-    contact_person VARCHAR(255)
-);
-
-CREATE SEQUENCE S2 START 1;
-
-```
-
-
-### OUTPUT:
-
-![Screenshot 2023-10-21 190838](https://github.com/Lakshmipriya2005/DBMS/assets/115525361/6941eec5-a29d-49f2-b642-9faa553c5710)
-
-![Screenshot 2023-10-21 190934](https://github.com/Lakshmipriya2005/DBMS/assets/115525361/4fd3c19f-6eb2-433a-b260-cb701ca8daac)
-
-
-### 6) insert the data into supplier table use sequence.
-
-### SQL QUERY: 
-```
-INSERT INTO supplier (id, name, address, contact_person)
-VALUES (NEXTVAL('S2'), 'ABC Suppliers', '123 Main Street', 'John Doe');
-
-INSERT INTO supplier (id, name, address, contact_person)
-VALUES (NEXTVAL('S2'), 'XYZ Distributors', '456 Elm Road', 'Jane Smith');
-```
-
-
-### OUTPUT:
-
-![Screenshot 2023-10-21 191122](https://github.com/Lakshmipriya2005/DBMS/assets/115525361/2f779d72-49da-4e24-8749-575d5625a31b)
-
-
-### 7) Drop the sequence
-
-### SQL QUERY: 
-```
-DROP SEQUENCE S2;
-```
-
-
-### OUTPUT:
-
-![Screenshot 2023-10-21 191127](https://github.com/Lakshmipriya2005/DBMS/assets/115525361/bde530b6-caf5-48e6-96a6-e32d87846e74)
-
-
-
-## RESULT :
-### Thus the sequence and synonym created and used in SQL.
+## RESULT:
+Thus the simulation of classification technique has been executed using WEKA tool successfully.
